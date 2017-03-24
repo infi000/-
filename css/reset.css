@@ -1,0 +1,30 @@
+/*默认样式*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+h1,h2,h3,h4,h5,h6{ font-weight: normal;}
+a{border:0;text-decoration: none;outline: none;-webkit-tap-highlight-color:rgba(0,0,0,0);}
+a,button,input{outline: none;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+em{ font-style: normal;}
+ul,li{list-style: none;}
+img { border: none; }
+html,body{width:100%;}
+body{font-family: weiruanyahei,FZYQJW,"微软雅黑",Tahoma,"\534E\6587\5B8B\4F53",arial;}
+.clear{clear: both}
+::-webkit-scrollbar{width:0;}
+@media screen and (min-width:320px) and (max-width:359px){
+}
+@media screen and (min-width:360px) and (max-width:374px){
+}
+@media screen and (min-width:375px) and (max-width:410px){
+}
+@media screen and (min-width:411px) and (max-width:413px){
+}
+@media screen and (min-width:414px) and (max-width:434px){
+}
+@media screen and (min-width:435px){
+}
+@media screen and (min-width:540px){
+}
+@media screen and (min-width:768px){
+}
+@media screen and (min-width:800px){
+}
