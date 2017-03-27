@@ -1,0 +1,307 @@
+/*
+* @Author: 张驰阳
+* @Date:   2017-03-27 13:26:11
+* @Last Modified by:   张驰阳
+* @Last Modified time: 2017-03-27 16:00:13
+*/
+
+body {
+    background: #fff;
+}
+
+.wrap {
+    width: 100%;
+    height: 100%;
+    background: #232a33;
+}
+
+.logoBox {
+    overflow: hidden;
+    width: 100%;
+    height: 3.73rem;
+}
+
+.leaf {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.logo {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    top: 0.63rem;
+}
+
+.leaf img {
+    width: 100%;
+}
+
+.logo img {
+    width: 3.3rem;
+    margin: 0 auto;
+    display: block;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    background: #fff;
+}
+
+
+/*绑定状态*/
+
+.statusBox {
+    width: 90%;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0px 1px 4px #bfbfbf;
+    border-radius: 0.4rem;
+    position: relative;
+    top: -1.13rem;
+    padding-top: 0.46rem;
+    padding-bottom: 0.56rem;
+    box-sizing: border-box;
+}
+
+.statusBox h2 {
+    width: 100%;
+    line-height: 0.62rem;
+    height: 0.62rem;
+    margin: 0 auto;
+    font-size: 0.4rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+.statusBox h2 span {
+    color: #009bff;
+}
+
+.statusBox p {
+    color: #a7a7a7;
+    font-size: 0.2rem;
+    text-align: center;
+    line-height: 0.9rem;
+    height: 0.9rem;
+}
+
+.statusBtnBox {
+    width: 5.45rem;
+    margin: 0 auto;
+}
+
+.statusBtn {
+    width: 100%;
+    height: 0.76rem;
+    text-align: center;
+    line-height: 0.76rem;
+    color: #fff;
+    margin-bottom: 0.2rem;
+    border-radius: 1rem;
+    font-size: 0.3rem;
+    box-sizing: border-box;
+}
+
+.bind-btn {
+    box-shadow: 0 0 3px 0px #62f7f7;
+    background: -webkit-linear-gradient( #62f7f7, #13968a);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient( #62f7f7, #13968a);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient( #62f7f7, #13968a);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient( #62f7f7, #13968a);
+    /* 标准的语法（必须放在最后） */
+    background: linear-gradient( #62f7f7, #13968a);
+}
+
+.start-btn {
+    box-shadow: 0 0 3px 0px #f14100;
+    background: -webkit-linear-gradient( #ff6902, #f14100);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient( #ff6902, #f14100);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient( #ff6902, #f14100);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient( #ff6902, #f14100);
+    /* 标准的语法（必须放在最后） */
+}
+
+
+/*盒子在线状态*/
+
+.showBox {
+    width: 5.45rem;
+    margin: 0 auto;
+    position: relative;
+    top: -0.5rem;
+}
+
+.onlineInfo {
+    line-height: 0.62rem;
+    height: 0.62rem;
+    width: 100%;
+}
+
+.onlineInfo h2 {
+    width: 2.17rem;
+    background: #eee;
+    font-size: 0.4rem;
+    text-align: center;
+    border-radius: 0.1rem;
+    font-weight: bold;
+    float: left;
+}
+
+.onlineNumBox {
+    width: 2.8rem;
+    float: right;
+}
+
+.onlineNumBox li:last-child {
+    margin-left: 1.5rem;
+}
+
+.onlineNumBox li img {
+    width: 0.29rem;
+    float: left;
+    position: relative;
+    top: 0.15rem;
+    margin-right: 0.1rem;
+}
+
+.onlineNumBox li span {
+    float: left;
+    font-size: 0.2rem;
+}
+
+.onlineNum {
+    color: #00d33b;
+}
+
+.onlineNumBox li b {
+    float: left;
+    font-size: 0.2rem;
+}
+
+
+/*盒子容器*/
+
+.container {
+    width: 100%;
+    padding-top: 0.65rem;
+    padding-bottom: 0.65rem;
+}
+
+.container ul {
+    width: 100%;
+}
+
+.container li {
+    width: 30%;
+    float: left;
+    text-align: center;
+    height: 1.65rem;
+    margin-bottom: 0.35rem;
+    border: 0.04rem solid #fff;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.container li.boxOnline {
+    border-color: #252c35;
+}
+
+.container li.boxOnline .boxId {
+    background: #252c35;
+    color: #00d33b;
+}
+.container li.boxOffline {
+    border-color: #b3b3b3;
+}
+
+.container li.boxOffline .boxId {
+    background: #b3b3b3;
+    color: #fff;
+}
+
+.container li:nth-child(3n-1) {
+    margin: 0 5%;
+    margin-bottom: 0.35rem;
+}
+
+.container li .boxId {
+    height: 0.48rem;
+    line-height: 0.48rem;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.2rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.container li .boxPic {
+    width: 100%;
+    height: 1.11rem;
+    line-height: 1.11rem;
+}
+
+.container li .boxPic img {
+    width: 0.65rem;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+
+/*底部设置*/
+
+.setBox {
+    height: 1.2rem;
+    background: #00a0ff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.setBox b {
+    line-height: 1.2rem;
+    color: #fff;
+    display: block;
+    font-size: 0.4rem;
+    font-weight: 400;
+}
+
+.setChoose {
+    width: 90%;
+    height: 3.4rem;
+    position: absolute;
+    top: -3.4rem;
+    background: #fff;
+    left: 5%;
+    border-top-right-radius: 0.4rem;
+    border-top-left-radius: 0.4rem;
+    padding-top: 0.8rem;
+    box-sizing: border-box;
+}
+
+.setChoose li {
+    height: 0.88rem;
+    line-height: 0.88rem;
+    color: #000;
+    font-size: 0.35rem;
+}
+
+.setChoose li.choosed {
+    background: #eee;
+    color: #ff5500;
+}

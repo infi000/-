@@ -1,10 +1,9 @@
 /*
 * @Author: 张驰阳
-* @Date:   2017-03-23 15:21:18
+* @Date:   2017-03-27 13:55:29
 * @Last Modified by:   张驰阳
-* @Last Modified time: 2017-03-27 18:28:05
+* @Last Modified time: 2017-03-27 14:16:13
 */
-
 body {
     background: #232a33;
 }
@@ -47,13 +46,7 @@ body {
     display: block;
 }
 
-.registBox {
-    position: relative;
-    width: 100%;
-    background: #fff;
-}
-
-.typeBox {
+.bindBox {
     width: 90%;
     margin: 0 auto;
     background: #fff;
@@ -66,7 +59,7 @@ body {
     box-sizing: border-box;
 }
 
-.typeBox h2 {
+.bindBox h2 {
     width: 2.17rem;
     line-height: 0.62rem;
     height: 0.62rem;
@@ -78,68 +71,18 @@ body {
     font-weight: bold;
 }
 
-.choose {
-    width: 100%;
-    margin-top: 0.52rem;
-}
 
-.choose dl {
-    float: left;
-    width: 20%;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.choose dl dt {
-    height: 0.6rem;
-    font-size: 0.1rem;
-}
-
-.choose dl dt img {
-    height: 0.45rem;
-}
-
-.choose dl dt:after {
-    content: "|";
-    float: right;
-    margin-top: 0.1rem;
-    color: #9ccaff;
-    font-size: 0.25rem;
-}
-
-.choose dl dt.lastchild:after {
-    content: none;
-}
-
-.choose dd {
-    height: 0.5rem;
-    font-size: 0.3rem;
-    font-weight: bold;
-}
-.choose dl.choosed dd{
-    color: #ff5400;
-}
-.choose dl.choosed dt img.light{
-    display: inline;
-}
-.choose dl.choosed dt img.dark{
-    display: none;
-}
-.choose dl dt img.light{
-    display: none;
-}
-.choose dl dt img.dark{
-    display: inline;
-}
 .inputBox {
     width: 5.45rem;
-    margin: 0 auto;
+    margin: 1.2rem  auto 1.5rem;
 }
 
 .inputBox .inputBox-1 {
     width: 100%;
-    height: .6rem;
-    margin-bottom: 0.6rem;
+    height: .9rem;
+    margin-bottom: 0.3rem;
+    border: 0.02rem solid #9ccaff;
+    border-radius: 0.1rem;
 }
 
 .inputBox .iconBox {
@@ -147,8 +90,9 @@ body {
     height: .42rem;
     width: 0.4rem;
     position: relative;
-    top: 0.1rem;
+    top: 0.2rem;
     text-align: center;
+    left: 0.2rem;
 }
 
 .inputBox .iconBox img {
@@ -161,36 +105,22 @@ body {
     font-size: .3rem;
     float: right;
     width: 4.66rem;
-    height: 0.6rem;
+    height: 0.9rem;
     margin-right: .33em;
     border: none;
-    border-bottom: 0.02rem solid #9ccaff;
     box-sizing: border-box;
-    text-indent: 1.5em;
+    text-indent: .5em;
     color: #000;
     border-radius: 0;
-    letter-spacing: 0.2em;
-}
-.data{
-    margin-top: 1rem;
-}
-.data .inputBox-1 input{
     letter-spacing: 0.05em;
-}
-.inputBox .inputBox-1 input::-webkit-input-placeholder {
-    font-size: 0.2rem;
-    letter-spacing: 0.1em;
 }
 
 .btnBox {
     width: 5.45rem;
     margin: 0 auto;
-    margin-top: 1.25rem;
 }
-.complete{
-    margin-top: 2.35rem;
-}
-.btn-next,.btn-complete {
+
+.btn {
     width: 100%;
     height: 0.76rem;
     text-align: center;
@@ -200,6 +130,9 @@ body {
     border-radius: 1rem;
     font-size: 0.3rem;
     box-sizing: border-box;
+}
+
+.btn-back {
     box-shadow: 0 0 3px 0px #05abfa;
     background: -webkit-linear-gradient( #05abfa, #0066cc);
     /* Safari 5.1 - 6.0 */
@@ -211,11 +144,14 @@ body {
     /* 标准的语法（必须放在最后） */
 }
 
-.msgBox {
-    width: 100%;
-    height: 1.1rem;
-    line-height: 1.1rem;
-    color: red;
-    font-size: 0.2rem;
-    text-align: center;
+.btn-bind {
+    box-shadow: 0 0 3px 0px #f14100;
+    background: -webkit-linear-gradient( #ff6902, #f14100);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient( #ff6902, #f14100);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient( #ff6902, #f14100);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient( #ff6902, #f14100);
+    /* 标准的语法（必须放在最后） */
 }
