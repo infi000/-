@@ -12,40 +12,41 @@
     <title>小脉直播</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/login.css">
-    <script src="./js/rem.js"></script>
+    <script src="./js/tools.js"></script>
 </head>
 
 <body>
-    <div class="wrap">
+    <div class="wrap" id="wrap">
         <div class="leafBox">
-            <img src="./img/leaf.png" >
+            <img src="./img/leaf.png">
         </div>
         <div class="logoBox">
-            <img src="./img/logo.png" >
+            <img src="./img/logo.png">
         </div>
-        <div class="loginBox">
+        <div class="loginBox" id="loginBox">
             <div class="msgBox"></div>
             <div class="inputBox">
                 <div class="userName">
                     <img src="./img/username.png">
-                    <input type="number" placeholder="请输入手机号">
+                    <input type="number" placeholder="请输入手机号" id="tel" action="input.,">
                 </div>
                 <div class="password">
-                     <img src="./img/password.png">
-                     <input type="password" placeholder="请输入密码">
+                    <img src="./img/password.png">
+                    <input type="password" placeholder="请输入密码" id="passwd" action="input.,">
                 </div>
             </div>
-            <div class="msgBox"></div>
+            <div class="msgBox" id="msgBox"></div>
             <div class="btnBox">
-                <div class="btn-regist">
-                     注册
-                </div>
-                <div class="btn-login">
+                <div class="btn-login" action="login.," id="login">
                     登陆
+                </div>
+                <div class="btn-regist" action="regist.," id="regist">
+                    注册
                 </div>
             </div>
         </div>
     </div>
+    <script src="./js/login.js"></script>
 </body>
 
 </html>

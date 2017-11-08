@@ -1,10 +1,13 @@
+var HOST={
+    dev:"http://www.xiaomaizhibo.com/cloudlive/",
+    // dev:"http://www.xiaomaizhibo.com/cloudltest/"    
+};
 (function(doc, win) {
     var docEl = doc.documentElement,
         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
         recalc = function() {
             var clientWidth = docEl.clientWidth;
             var clientHeight = docEl.clientHeight;
-            console.log(clientWidth);
             if (!clientWidth) return;
             docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
             if (clientHeight < clientWidth) {
@@ -19,7 +22,8 @@
 })(document, window);
 //清除空格
 String.prototype.trim = function() {
-    return this.replace(/[\s　]+|(&nbsp;)+/gi, ''); };
+    return this.replace(/[\s　]+|(&nbsp;)+/gi, '');
+};
 
 function checkphone(p) {
     var reg = new RegExp(/^1[3-8]{1}[0-9]{9}$/);
@@ -32,7 +36,7 @@ function checkphone(p) {
 
 function checkemail(p) {
     var reg = new RegExp(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/);
-    if (reg.test(p)) {
+    if (reg.test(p) || p == "") {
         return true;
     } else {
         return false;
@@ -47,14 +51,35 @@ function checkUrl(p) {
         return false;
     }
 }
-function checkpasswd(p){
-        var reg = new RegExp( /^[a-z\d]*$/i );
-        if(reg.test(p)){
-            return true;
-        }else{
-            return false;
-        }
+
+function checkpasswd(p) {
+    //不小于八位数字字母组合
+    var reg = new RegExp(/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,}$/);
+    if (reg.test(p)) {
+        return true;
+    } else {
+        return false;
     }
+}
+//显示loading
+function showLoading(options){
+    var options=options||{}
+    if(!mainVar.loading){
+        var css='.loadingScreen{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,'+(options.opacity||.2)+');z-index:'+(options.zIndex||10000)+';}\
+                .loading{background:url(./img/loading.gif) no-repeat center center;height:25px;width:25px;position:fixed;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);background-color:rgba(0,0,0,.8);padding:15px;background-size:25px 25px;box-sizing:content-box;border-radius:8px;}\
+                 .loadingScreen .loading span{position: absolute;font-size: 0.4rem;color: wi;color: #171616;top: -0.7rem; left: 0;right: 0;text-align: center;font-weight: bold;}';
+    setStyle(css);
+    mainVar.loading=createNode(DB,'div',{className:"loadingScreen",html:'<div class="loading"></div>'});
+    }else{
+        mainVar.loading.style.display='block';
+    };
+};
+//隐藏loading
+function hideLoading(){
+    if(mainVar.loading){
+        mainVar.loading.style.display='none';
+    };
+};
 function addEvent(_, Eve, Fun, b) { _.addEventListener(Eve, Fun, b || false) };
 
 function delEvent(_, Eve, Fun, b) { _.removeEventListener(Eve, Fun || null, b || false) };
@@ -76,7 +101,18 @@ function getChildNodes(_, tag) {
     }
     return (nodes == "" ? null : nodes);
 };
+//获取兄弟元素节点
+function siblings(ele) {
+    var r = [];
+    var n = ele.parentNode.firstChild;
+    for (; n; n = n.nextSibling) {
+        if (n.nodeType === 1 && n !== ele) {
+            r.push(n);
+        }
+    }
 
+    return r;
+}
 //取search
 function getSearch(str) {
     var s = str || location.search.substr(1),
@@ -106,7 +142,10 @@ function trim(str) {
 }
 //移除node    
 function removeNode(_) {
-    _ && _.parentNode.removeChild(_)
+    var arr = (typeOf(_) == "array") ? _ : [_];
+    for (var i = 0; i < arr.length; i++) {
+        arr[i] && arr[i].parentNode.removeChild(arr[i])
+    }
 }
 //创建并返回element  
 function createNode(_, tag, type, position) {
@@ -616,7 +655,7 @@ function tishi($c, options) {
     t.boxSty = opt.boxSty;
     bgSty = t.bg.style;
     boxSty = t.box.style;
-    show();
+    show("",opt.fun);
     return t
 
     function create() {
